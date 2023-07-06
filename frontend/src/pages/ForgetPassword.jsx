@@ -78,9 +78,13 @@ import clientAxios from "../config/clientAxios.jsx"
                     </div>
                     
                     <div className="flex items-center justify-end mt-6 gap-x-6">
-                        <button type="button" className="text-sm font-semibold leading-6 text-white hover:text-violet-600 hover:shadow-violet-400">
-                            Cancel
-                        </button>
+                        
+                    <Link
+                            to="/"
+                            className="block font-bold hover:text-violet-600 hover:shadow-violet-400"
+                        >
+                        <h3>Cancel</h3> 
+                    </Link>
                         <button
                             type="submit"
                             className="rounded-md bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F] px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -90,13 +94,13 @@ import clientAxios from "../config/clientAxios.jsx"
                     </div>
                     <div className="flex flex-row justify-between pb-6 my-6">
                         <Link
-                            to="register"
+                            to="/register"
                             className="block font-bold hover:text-violet-600 hover:shadow-violet-400"
                         >
                         <h3>You Don't have Account?</h3> 
                         </Link>
                         <Link
-                            to="login"
+                            to="/login"
                             className="block font-bold hover:text-violet-600 hover:shadow-violet-400"
                         >
                         <h3>You have an Account? Sign In</h3> 

@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -10,13 +10,35 @@ const navigation = [
   { name: 'Blog', link: '/blog', current: false },
 ]
 
+    
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Header() {
+
+  const [isScrolled, setIsScroled] = useState(false);
+  
+
+  const handleScrolled = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    setIsScroled(scrollTop > 0)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrolled)
+    return () => {
+      window.removeEventListener('scroll', handleScrolled)
+      
+    }
+  }, [])
+
+
+
+
   return (
-    <Disclosure as="nav" className="bg-[#0A1628]">
+    <Disclosure as="nav" className={`bg-[#0A1628] ${isScrolled ? 'fixed top-0 left-0 w-full' : ''}`}>
       {({ open }) => (
         <>
           <div className="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -106,16 +128,7 @@ export default function Header() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 w-48 py-1 mt-2 origin-top-right rounded-md shadow-lg bg-slate-200 ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/register"
-                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
-                          >
-                           Setting
-                          </Link>
-                        )}
-                      </Menu.Item>
+                      
                       <Menu.Item>
                         {({ active }) => (
                           <Link
@@ -141,6 +154,7 @@ export default function Header() {
                           <Link
                             to="#"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                            
                           >
                             Sign out
                           </Link>

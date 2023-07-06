@@ -14,7 +14,7 @@ const getProjects = async (req, res) => {
 };
 
 const newProyect = async (req, res) => {
-  const project = new Proyect(req.body);
+  const project = new Project(req.body);
   project.creator = req.user._id;
 
   try {
@@ -30,7 +30,7 @@ const getProject = async (req, res) => {
 
   const project = await Project.findById(id)
     .populate({
-      path: "tag",
+      path: "task",
       populate: { path: "complet", select: "name" },
     })
     .populate("collaborators", "name email");

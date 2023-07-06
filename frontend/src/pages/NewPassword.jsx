@@ -10,7 +10,7 @@ const NewPassword = () => {
     const [alerta, setAlerta] = useState({})
     const [password, setPassword] = useState('')
     const [showPassword, setShowPassword ] = useState(false)
-    const [repassword, setRePassword ] = useState(false)
+    const [repassword, setRePassword ] = useState('')
     const [passwordModified, setPasswordModified] = useState(false)
 
     const params = useParams()
@@ -67,6 +67,7 @@ const NewPassword = () => {
                 error: false
             })
             setPasswordModified(true)
+            navigate('/projects')
         } catch (error) {
             console.log(error.response.data.msg);
         }
@@ -201,10 +202,10 @@ const NewPassword = () => {
             
         </div>
         {passwordModified && (
-          <Link to="/login">
+          <Link to="/projects">
               <button
                   type=""
-                  className="block mx-auto px-24 uppercase rounded-md bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F] py-2 my-6 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="w-full py-3 my-10 font-bold text-white uppercase transition-colors rounded bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F]"
                   >
                   Go Login
               </button> 

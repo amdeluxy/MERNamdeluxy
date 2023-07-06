@@ -25,10 +25,10 @@ const projectsSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-    tags: [
+    task: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Tag",
+        ref: "Task",
       },
     ],
     collaborators: [

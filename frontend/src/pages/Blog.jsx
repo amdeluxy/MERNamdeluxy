@@ -7,8 +7,7 @@ const Blog = () => {
   return (
     <>
         <BlogHero />
-        <h1 className="text-3xl uppercase text-center px-4 py-10 font-bold">Our Blogs</h1>
-        <BlogList />
+        <h1 className="px-4 py-10 text-3xl font-bold text-center uppercase">Our Blogs</h1>
         <BlogList />
         <NewsLetter />
         

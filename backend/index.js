@@ -5,8 +5,7 @@ import conectDb from "./config/db.js";
 import usuarioRoutes from "./routes/usuarioRoutes.js"
 import projectRoutes from "./routes/projectRoutes.js"
 import taskRoutes from "./routes/taskRoutes.js"
-
-
+import postRoutes from "./routes/postRoutes.js"
 
 const app = express();
 app.use(express.json());
@@ -36,6 +35,7 @@ app.use(cors(corsOptions));
 app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/task', taskRoutes);
+app.use('/api/post', postRoutes);
 
 const PORT = process.env.PORT || 4000;
 

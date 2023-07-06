@@ -4,7 +4,7 @@ import gradient from '../../src/img/3dsignin.png'
 import Socialmedia from '../components/socialmedia.jsx'
 import clientAxios from '../config/clientAxios.jsx'
 import Alerta from '../components/Alerta.jsx'
-import useAuth from '../hooks/useAuth'
+import useAuth from '../hooks/useAuth.jsx';
 
 
 const Login = () => {
@@ -14,6 +14,8 @@ const Login = () => {
   const [alerta, setAlerta] = useState({})
 
   const { setAuth } = useAuth();
+
+  const navigate = useNavigate()
 
   const handlePasswordVisibility = () => {
     setShowPassword(showPasswordPrev => !showPasswordPrev);
@@ -40,6 +42,7 @@ const Login = () => {
       setAlerta({})
       localStorage.setItem('token', data.token)
       setAuth(data)
+      navigate('/projects')
     } catch (error) {
       setAlerta({
         msg: error.response.data.msg,
@@ -131,27 +134,27 @@ const Login = () => {
                         <button type="button" className="text-sm font-semibold leading-6 text-white hover:text-violet-600 hover:shadow-violet-400">
                             Cancel
                         </button>
-                        <button
-                            type="submit"
-                            className="rounded-md bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F] px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >
-                            Start Setion
-                        </button>
+                        
                     </div>
                     <div className="flex flex-row justify-between pb-6 my-6">
                         <Link
-                            to="register"
+                            to="/register"
                             className="block font-bold hover:text-violet-600 hover:shadow-violet-400"
                         >
                         <h3>You Don't have Account?</h3> 
                         </Link>
                         <Link
-                            to="login"
+                            to="/forget-password"
                             className="block font-bold hover:text-violet-600 hover:shadow-violet-400"
                         >
-                        <h3>You have an Account? Sign In</h3> 
+                        <h3>You Forget the Password?</h3> 
                         </Link>
                     </div>
+                    <input
+                            type="submit"
+                            value="Start"
+                            className="w-full py-3 mb-5 font-bold text-white uppercase transition-colors rounded bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F]"
+                            />
                 </form>
 
         </div>

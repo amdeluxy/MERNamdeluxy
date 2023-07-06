@@ -14,6 +14,7 @@ const navigation = [
   { name: 'Blog', href: '/blog', current: false },
 ]
 
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -37,7 +38,6 @@ export default function Footer() {
                             </Link>
                         
                         </div>
-                        
                         <div className="mx-2">
                             <div className="flex space-x-4">
                                 {navigation.map((item) => (

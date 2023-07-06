@@ -9,8 +9,8 @@ const Register = () => {
   const [phone, setPhone ] = useState('')
   const [email, setEmail ] = useState('')
   const [password, setPassword ] = useState('')
+  const [repassword, setRePassword ] = useState('')
   const [showPassword, setShowPassword ] = useState(false)
-  const [repassword, setRePassword ] = useState(false)
   const [alerta, setAlerta] = useState({})
 
   const handlePasswordVisibility = () => {
@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     
-    if([name, lastName, phone, email, password].includes('')){
+    if([name, lastName, phone, email, password, repassword].includes('')){
       setAlerta({
         msg: 'All fields are mandatory - please complete all required information.',
         error: true
@@ -218,7 +218,7 @@ const Register = () => {
                 </div>
                 
                 <div className="sm:col-span-4">
-                    <label htmlFor="password" className="block text-sm font-medium leading-6 text-white">
+                    <label htmlFor="repassword" className="block text-sm font-medium leading-6 text-white">
                         Re-write Password
                     </label>
                     <div className="flex">
@@ -254,23 +254,7 @@ const Register = () => {
                     </div>
                       
                 </div>
-                <div className="flex items-center justify-end mt-6 gap-x-6">
-                    <Link to="/">
-                        <button type="button" className="text-sm font-semibold leading-6 text-white hover:text-violet-600 hover:shadow-violet-100">
-                            Cancel
-                        </button>
-                    </Link>
-                    
-                    <Link>
-                        <button
-                            type="submit"
-                            className="rounded-md bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F] px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                            >
-                            Save
-                        </button>
-                    </Link>
-                    
-                </div>
+                
                 <div className="flex flex-row justify-between py-6 my-6">
                     <Link
                         to="/login"
@@ -279,6 +263,13 @@ const Register = () => {
                        <h3>You have an Account? Sign In</h3> 
                     </Link>
                 </div>
+
+                <input 
+                type="submit"
+                value="Crear Cuenta"
+                className="w-full py-3 mb-5 font-bold text-white uppercase transition-colors rounded bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F]"
+            />
+                
             </form>
 
         </div>

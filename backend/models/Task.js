@@ -24,15 +24,15 @@ const taskSchema = mongoose.Schema(
     priority: {
       type: String,
       required: true,
-      enum: ["Baja", "Media", "Alta"],
+      enum: ["Low", "Medium", "High"],
     },
     project: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Proyecto",
+      ref: "Project",
     },
     complete: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Usuario",
+      ref: "Users",
       default: null,
     },
   },
@@ -41,5 +41,5 @@ const taskSchema = mongoose.Schema(
   }
 );
 
-const Task = mongoose.model("Tarea", taskSchema);
+const Task = mongoose.model("Task", taskSchema);
 export default Task;

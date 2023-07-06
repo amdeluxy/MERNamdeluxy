@@ -52,5 +52,5 @@ userSchema.pre("save", async function (next) {
     return await bcrypt.compare(passwordForm, this.password);
   };
   
-  const Users = mongoose.model("Users", userSchema);
+  const Users = mongoose.model("User", userSchema);
   export default Users;
