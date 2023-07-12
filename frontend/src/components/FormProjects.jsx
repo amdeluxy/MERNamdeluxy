@@ -116,7 +116,7 @@ const FormProjects = () => {
         <input 
             type="submit"
             value={id ? 'Update' : 'Create'}
-            className="w-full p-3 font-bold text-white uppercase transition-colors rounded cursor-pointer bg-sky-600 hover:bg-sky-700 "    
+            className="w-full p-3 font-bold text-white uppercase transition-colors rounded cursor-pointer bg-gradient-to-t from-[#5C28A4] via-[#A888F9] to-[#5C28A4] hover:from-[#2B114F] hover:via-[#6339CA] hover:to-[#2B114F] "    
         />
         
     </form>

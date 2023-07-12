@@ -13,12 +13,12 @@ const router = express.Router();
 
 router
     .route("/")
-    .get(checkAuth, getPosts)
-    .post(checkAuth, newPost);
+    .get(getPosts)
+    .post( newPost);
 
 router
-    .route("/:id")
-    .get(checkAuth, getPost)
+    .route("/:_id")
+    .get(getPost)
     .put(checkAuth, editPost)
     .delete(checkAuth, deletePost);
     

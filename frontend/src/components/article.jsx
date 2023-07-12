@@ -1,14 +1,24 @@
-
+import { useParams } from 'react-router-dom'
 import blog1 from '../../src/img/blog1.png'
+import blog from '../data/data'
+import usePost from '../hooks/usePost'
+import { useEffect } from 'react'
+
+
 
 const Article = () => {
 
+    const params = useParams();
     
+    const { getPost } = usePost()
+
+    useEffect( () => {
+        getPost(params._id)
+    }, [])
 
    
   return (
     <>
-        
             <div className="px-4 pb-6 m-auto">
                 <img
                     className="block w-auto m-auto rounded-lg"
@@ -19,9 +29,10 @@ const Article = () => {
         
 
                 <div className="container max-w-2xl m-auto">
-                    <h1 className="px-4 pt-10 pb-2 text-3xl font-bold text-center uppercase">Mastering SEO</h1>
                     <h1 className="px-4 text-xl font-bold text-center text-orange-500 uppercase">SEO - WEB - GOOGLE</h1>
                     
+                    {/* <h1 className="px-4 pt-10 pb-2 text-3xl font-bold text-center uppercase">{title}</h1>
+                    <h1 className="px-4 pt-10 pb-2 text-3xl font-bold text-center uppercase">{text}</h1> */}
                     <article className="px-2 my-6 text-base">
                     <h3 >Top 10 Techniques to Boost Your Website Ranking in 2023</h3><br/><br/>
                 Hello digital explorers! In the ever-changing world of online marketing, Search Engine Optimization (SEO) remains a constant beacon of hope for businesses to gain visibility, traction, and growth. This dynamic field is all about ensuring your website doesn't get lost in the vast ocean of the Internet, but instead, sails triumphantly to the top of search results!<br/><br/>

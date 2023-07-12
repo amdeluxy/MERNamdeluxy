@@ -16,13 +16,8 @@ const postSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    image: {
-        type: String,
-        trim: true,
-        required: true,
-    },
     dateCreate: {
-        type: String,
+        type: Date,
         trim: true,
         required: true,
     },

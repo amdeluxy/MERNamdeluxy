@@ -17,10 +17,13 @@ import Projects from './pages/Projects.jsx'
 import NewProject from './pages/NewProject.jsx'
 import Project from './pages/Project.jsx'
 import EditProject from './pages/EditProject.jsx'
+import NewPost from './pages/NewPost.jsx'
+import PostList from './pages/PostList.jsx'
 
 
 import { AuthProvider } from './context/AuthProvider.jsx'
 import { ProjectsProvider } from './context/ProjectsProvider.jsx'
+import { PostProvider } from './context/PostProvider.jsx'
 
 
 function App() {
@@ -30,14 +33,14 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <ProjectsProvider>
-          
+        <PostProvider>
           <Routes>
             <Route path="/" element= {<Layout/>}>
               <Route index element={<Home />} />
               <Route path="services" element={<Services />} />
               <Route path="portfolio" element={<Portfolio />} />
               <Route path="blog" element={<Blog />} />
-              <Route path="blogarticle/:id" element={<BlogArticle />} />
+              <Route path="blogarticle/:_id" element={<BlogArticle />} />
             </Route>
             <Route path="" element={<AuthLayout />}>
               <Route path="login" index element={<Login />}/>
@@ -52,10 +55,12 @@ function App() {
               <Route path="create-project" element={<NewProject />} />
               <Route path=":id" element={<Project />} />
               <Route path="edit/:id" element={<EditProject />} />
+              <Route path="newpost" element={<NewPost />} />
+              <Route path="postlist" element={<PostList />} />
 
             </Route>
           </Routes>
-          
+          </PostProvider>
         </ProjectsProvider>
       </AuthProvider>
     </BrowserRouter>

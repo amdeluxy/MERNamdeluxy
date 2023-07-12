@@ -1,11 +1,13 @@
 
 import Article from "../components/article"
 import BlogHero from "../components/blogHero"
+import { PostProvider } from "../context/PostProvider"
 
 
 const BlogArticle = () => {
 
   return (
+    <PostProvider>
     <>
         <BlogHero />
 
@@ -13,6 +15,7 @@ const BlogArticle = () => {
         <Article />
 
     </>
+    </PostProvider>
   )
 }
 

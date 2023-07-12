@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom"
 import useProjects from "../hooks/useProjects.jsx";
+import PreviewPost from "../components/PreviewPost.jsx";
 
 
 
@@ -44,6 +45,7 @@ const Project = () => {
 
         </div>
 
+        
       </div>
     )
 }

@@ -13,8 +13,16 @@ const Sidebar = () => {
 
         <Link
             to="create-project"
-            className="block w-full p-3 mt-5 font-bold text-center text-white uppercase bg-blue-500 rounded-lg"
+            className="block w-full p-3 mt-5 font-bold  text-white uppercase hover:bg-violet-600 transition-colors"
         >New Project</Link>
+        <Link
+            to="newpost"
+            className="block w-full p-3 mt-5 font-bold  text-white uppercase hover:bg-violet-600 transition-colors"
+        >New Blog Post</Link>
+        <Link
+            to="postlist"
+            className="block w-full p-3 mt-5 font-bold  text-white uppercase hover:bg-violet-600 transition-colors"
+        >Post List</Link>
 
         
 
